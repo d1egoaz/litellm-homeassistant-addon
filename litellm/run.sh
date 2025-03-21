@@ -3,6 +3,9 @@
 CONFIG_PATH=/app/config.yaml
 PORT=$(bashio::config 'port')
 
+# Activate virtual environment path
+export PATH="/opt/venv/bin:$PATH"
+
 # Get the config from options and write it to the config file
 bashio::log.info "Writing configuration to ${CONFIG_PATH}"
 bashio::config.get "config" > ${CONFIG_PATH}
