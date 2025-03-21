@@ -1,0 +1,28 @@
+name: "LiteLLM"
+description: "Run LiteLLM proxy server for large language models"
+version: "0.0.1"
+slug: "litellm"
+init: false
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+options:
+  config: |-
+    model_list:
+      - model_name: "*"
+        litellm_params:
+          model: openai/*
+          api_key: os.environ/OPENAI_API_KEY
+    environment_variables:
+      OPENAI_API_KEY: <your-api-key-here>
+  port: 4000
+schema:
+  config: "str"
+  port: "port"
+ports:
+  "4000/tcp": 4000
+ports_description:
+  "4000/tcp": "LiteLLM API"
