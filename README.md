@@ -33,13 +33,15 @@ The add-on configuration allows you to define your LiteLLM configuration:
 # LiteLLM configuration in YAML format
 config: |-
   model_list:
-    - model_name: gpt-3.5-turbo
+    - model_name: "*"
       litellm_params:
-        model: gpt-3.5-turbo
-        api_key: your-api-key-here
+        model: openai/*
+        api_key: os.environ/OPENAI_API_KEY
   environment_variables:
-    OPENAI_API_KEY: your-api-key-here
-
+    OPENAI_API_KEY: <your-api-key-here>
+ general_settings:
+   master_key: "sk-1234"
+   database_url: "postgresql://..." 
 # Port the LiteLLM server will listen on (default: 4000)
 port: 4000
 ```
