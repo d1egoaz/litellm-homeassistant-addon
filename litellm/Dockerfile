@@ -10,7 +10,9 @@ RUN \
     py3-virtualenv \
     gcc \
     musl-dev \
-    libffi-dev
+    libffi-dev \
+    nodejs \
+    npm
 
 # Create and use a virtual environment
 RUN python3 -m venv /opt/venv
