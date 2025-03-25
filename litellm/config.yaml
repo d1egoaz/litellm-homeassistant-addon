@@ -1,6 +1,6 @@
 name: "LiteLLM"
 description: "Run LiteLLM proxy server for large language models"
-version: "0.0.10"
+version: "0.0.11"
 slug: "litellm"
 init: false
 arch:
@@ -18,6 +18,9 @@ options:
           api_key: os.environ/OPENAI_API_KEY
     environment_variables:
       OPENAI_API_KEY: <your-api-key-here>
+    general_settings:
+      master_key: "sk-1234"
+      database_url: "postgresql://..." 
   port: 4000
 schema:
   config: "str"
