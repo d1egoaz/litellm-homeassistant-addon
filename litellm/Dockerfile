@@ -4,15 +4,17 @@ FROM $BUILD_FROM
 # Install Python, pip and build dependencies
 RUN \
   apk add --no-cache \
-    python3 \
-    py3-pip \
-    python3-dev \
-    py3-virtualenv \
     gcc \
-    musl-dev \
     libffi-dev \
+    musl-dev \
     nodejs \
-    npm
+    npm \
+    openssl \
+    openssl-dev \
+    py3-pip \
+    py3-virtualenv \
+    python3 \
+    python3-dev
 
 # Create and use a virtual environment
 RUN python3 -m venv /opt/venv
