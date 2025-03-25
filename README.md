@@ -39,7 +39,9 @@ config: |-
         api_key: os.environ/OPENAI_API_KEY
   environment_variables:
     OPENAI_API_KEY: <your-api-key-here>
-
+ general_settings:
+   master_key: "sk-1234"
+   database_url: "postgresql://..." 
 # Port the LiteLLM server will listen on (default: 4000)
 port: 4000
 ```
