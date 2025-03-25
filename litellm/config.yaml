@@ -1,6 +1,6 @@
 name: "LiteLLM"
 description: "Run LiteLLM proxy server for large language models"
-version: "0.0.8"
+version: "0.0.9"
 slug: "litellm"
 init: false
 arch:
