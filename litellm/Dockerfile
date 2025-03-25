@@ -25,7 +25,6 @@ RUN /opt/venv/bin/pip install --no-cache-dir \
 
 # Copy data for add-on
 COPY run.sh /
-COPY validate_yaml.py /
-RUN chmod a+x /run.sh /validate_yaml.py
+RUN chmod a+x /run.sh
 
 CMD ["/run.sh"]
