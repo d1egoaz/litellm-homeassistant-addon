@@ -10,16 +10,18 @@ RUN \
     py3-virtualenv \
     gcc \
     musl-dev \
-    libffi-dev \
-    jq \
-    curl
+    libffi-dev
 
 # Create and use a virtual environment
 RUN python3 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
-# Install LiteLLM with proxy dependencies in the virtual environment
-RUN /opt/venv/bin/pip install --no-cache-dir "litellm[proxy]" PyYAML
+# Install required Python packages in the virtual environment
+RUN /opt/venv/bin/pip install --no-cache-dir \
+    "litellm[proxy]" \
+    prometheus_client \
+    langfuse \
+    prisma
 
 # Copy data for add-on
 COPY run.sh /
